@@ -1,47 +1,30 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>영화 검색 기능</title>
-    <link rel="stylesheet" href="moviesStyle.css">
+    <title>Movie App</title>
+    <link rel="stylesheet" href="moviestyles.css">
 </head>
 <body>
+    <div class="container">
+        <h1>Popular Movies</h1>
+        <input type="text" id="search-input" placeholder="Search for a movie...">
+        <div id="movie-container" class="movie-grid"></div>
+    </div>
 
-<h1>영화 목록</h1>
-
-<!-- 검색창 추가 -->
-<div class="search-bar">
-    <input type="text" id="search-input" placeholder="영화 제목을 검색하세요...">
-</div>
-
-<div id="movie-container" class="movie-container">
-    <!-- 영화 카드가 이곳에 동적으로 추가됩니다 -->
-</div>
-
-<!-- 모달 창 추가 -->
-<div id="movie-modal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <div class="modal-movie-info">
-            <div class="modal-movie-poster">
-                <img id="modal-poster" src="" alt="영화 포스터">
-            </div>
-            <div class="modal-movie-details">
-                <h2 id="modal-title"></h2>
-                <p id="modal-summary"></p>
-                <p id="modal-rating"></p>
-            </div>
+    <!-- Movie Details Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modal-title"></h2>
+            <img id="modal-poster" src="" alt="Movie Poster">
+            <p id="modal-overview"></p>
+            <p><strong>Release Date:</strong> <span id="modal-release-date"></span></p>
+            <p><strong>Rating:</strong> <span id="modal-rating"></span></p>
         </div>
     </div>
-</div>
 
-<!-- 영화 상세 페이지 -->
-  <div id="detail-page" class="hidden">
-    <h1 id="movie-title">영화 상세</h1>
-    <button id="close-button">닫기</button>
-    <p id="movie-description">영화 설명</p>
-  </div>
+    <script src="moviescript.js"></script>
 </body>
-<script src="./moviesMoving.js"></script>
-</html>* 
+</html>
