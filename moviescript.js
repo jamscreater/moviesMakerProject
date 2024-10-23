@@ -8,7 +8,6 @@ const options = {
  }
 };
 
-// DOM elements
 const movieContainer = document.getElementById('movie-container');
 const searchInput = document.getElementById('search-input');
 const modal = document.getElementById('modal');
@@ -19,12 +18,10 @@ const modalReleaseDate = document.getElementById('modal-release-date');
 const modalRating = document.getElementById('modal-rating');
 const closeButton = document.querySelector('.close-button');
 
-// Close the modal when the close button is clicked
 closeButton.addEventListener('click', () => {
  modal.style.display = 'none';
 });
 
-// Fetch popular movies (trending for the day) from TMDB API
 function fetchPopularMovies() {
  fetch(`${API_BASE_URL}/trending/movie/day?language=en-US`, options)
    .then(response => response.json())
@@ -32,9 +29,8 @@ function fetchPopularMovies() {
    .catch(error => console.error('Error fetching movies:', error));
 }
 
-// Display movies on the page
 function displayMovies(movies) {
- movieContainer.innerHTML = ''; // Clear previous content
+ movieContainer.innerHTML = '';
 
  movies.forEach(movie => {
    const movieCard = document.createElement('div');
@@ -45,13 +41,13 @@ function displayMovies(movies) {
      <p>${movie.overview.substring(0, 100)}...</p>
      <p><strong>Rating:</strong> ${movie.vote_average}</p>
    `;
-   // Add click event to show movie details in a modal
+
    movieCard.addEventListener('click', () => showMovieDetails(movie.id));
    movieContainer.appendChild(movieCard);
  });
 }
 
-// Show movie details in a modal
+
 function showMovieDetails(movieId) {
  fetch(`${API_BASE_URL}/movie/${movieId}`, options)
    .then(response => response.json())
@@ -61,17 +57,16 @@ function showMovieDetails(movieId) {
      modalOverview.innerText = movie.overview;
      modalReleaseDate.innerText = movie.release_date;
      modalRating.innerText = movie.vote_average;
-     modal.style.display = 'flex'; // Display the modal
+     modal.style.display = 'flex'; 
    })
    .catch(error => console.error('Error fetching movie details:', error));
 }
 
-// Filter movies based on search input
 searchInput.addEventListener('input', function () {
  const keyword = searchInput.value.toLowerCase();
 
  if (keyword.trim() === '') {
-   // If search input is empty, show popular movies again
+
    fetchPopularMovies();
  } else {
    fetch(`${API_BASE_URL}/search/movie?query=${keyword}&language=en-US`, options)
@@ -81,5 +76,4 @@ searchInput.addEventListener('input', function () {
  }
 });
 
-// Initial fetch of popular movies when page loads
 fetchPopularMovies();
