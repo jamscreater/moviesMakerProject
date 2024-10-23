@@ -1,4 +1,4 @@
-/* General Styling */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -16,14 +16,12 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Search Input */
 #search-input {
     width: 60%;
     padding: 10px;
     margin-bottom: 20px;
 }
 
-/* Movie Grid */
 .movie-grid {
     display: flex;
     flex-wrap: wrap;
@@ -54,7 +52,6 @@ h1 {
     font-size: 14px;
 }
 
-/* Modal Styles */
 .modal {
     display: none;
     position: fixed;
