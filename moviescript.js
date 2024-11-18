@@ -7,7 +7,7 @@ const options = {
    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4NzBmNjVhOTExY2QyZjQ1NzUxOGM3NDkyZGI1ZTkxYiIsIm5iZiI6MTcyOTYzOTcyNS43OTY5MTQsInN1YiI6IjY3MGY1NzVkMDQzMzFkYjRiMTEyNmExNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ._lHexjZWu7Ko2JnQCjZcJ1uIpYI048x2N2LT0LgeTRc' // 본인의 Bearer 토큰을 입력하세요
  }
 };
-
+adagdggfhadkhf
 const movieContainer = document.getElementById('movie-container');
 const searchInput = document.getElementById('search-input');
 const modal = document.getElementById('modal');
